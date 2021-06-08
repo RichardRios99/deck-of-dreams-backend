@@ -5,14 +5,14 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 
 
-const fileStorageEngine = multer.diskStorage({
-  destination:(req, file, cb)=> {
-    cb(null,'./images')
-  },
-  filename: (req,file,cb)=> {
-    cb(null, Date.now() +'--'+ file.originalname )
-  }
-})
+// const fileStorageEngine = multer.diskStorage({
+//   destination:(req, file, cb)=> {
+//     cb(null,'./images')
+//   },
+//   filename: (req,file,cb)=> {
+//     cb(null, Date.now() +'--'+ file.originalname )
+//   }
+// })
 
 
 
