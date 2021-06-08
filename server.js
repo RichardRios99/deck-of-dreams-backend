@@ -82,8 +82,9 @@ app.use(session({
      }
  }
 
+// mongodb+srv://RichardRios:<password>@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority
 // set up connection with the DB
-mongoose.connect('mongodb://localhost:27017/fakeLogIn',{
+mongoose.connect('mongodb+srv://RichardRios:Rios95081!@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority',{
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
