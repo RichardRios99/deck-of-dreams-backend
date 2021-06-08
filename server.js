@@ -3,7 +3,6 @@ const app = express()
 const PORT = 3003
 const mongoose = require('mongoose');
 const cors = require('cors')
-const multer = require('multer')
 
 
 const fileStorageEngine = multer.diskStorage({
