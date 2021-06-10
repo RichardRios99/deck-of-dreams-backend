@@ -104,9 +104,18 @@ team.put('/update', (req, res) => {
       res.status(400).json({ error: err.message })
     } 
     else {
-      console.log(req.session.currentUser)
-      updatedTeam.save()
-    	res.status(200).json(updatedTeam)
+      UserModel.findByIdAndUpdate(req.session.currentUser._id,{team:req.body},{new: true}, (error, foundUser)=>{
+    if (error){
+      res.status(400).json(error)
+    }
+    else{
+        foundUser.save()
+      res.status(200).json(foundUser.team)
+
+     
+          // res.json(foundUser.foundTeam)
+    }
+})
 	}
   })
 })

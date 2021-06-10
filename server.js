@@ -82,9 +82,8 @@ app.use(session({
      }
  }
 
-// mongodb+srv://RichardRios:<password>@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority
-// set up connection with the DB
-mongoose.connect('mongodb+srv://RichardRios:Pepsicola1!@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority',{
+
+mongoose.connect('mongodb://localhost:27017/fakeLogIn',{
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
@@ -97,7 +96,7 @@ db.on('error', (err)=> console.log(err.message));
 db.on('disconnected', ()=> console.log('mongoose disconnected'));
 
 app.use("/team", isAuthenticated, require('./controllers/teamController'))
-app.use("/users", require('./controllers/userController'))
+app.use("/users",   require('./controllers/userController'))
 app.use("/post",  isAuthenticated, require('./controllers/postController'))
 
 app.listen(PORT, () => {
