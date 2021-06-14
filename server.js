@@ -99,7 +99,6 @@ app.use("/team", isAuthenticated, require('./controllers/teamController'))
 app.use("/users",   require('./controllers/userController'))
 app.use("/post",  isAuthenticated, require('./controllers/postController'))
 
-app.listen(PORT, () => {
-  console.log(`celebrations happening on ${PORT}` )
-
+app.listen(process.env.PORT || 3003, () =>{
+  console.log(`celebrations happening on ${process.env.PORT}` )
 })
