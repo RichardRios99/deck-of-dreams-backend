@@ -51,7 +51,7 @@ let MongoDBStore = require('connect-mongodb-session')(session);
  
 
 let store = new MongoDBStore({
-  uri: 'mongodb://localhost:27017/fakeLogIn',
+  uri: 'mongodb+srv://RichardRios:Pepsicola1!@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority',
   collection: 'mySessions'
 });
  
@@ -83,7 +83,7 @@ app.use(session({
  }
 
 
-mongoose.connect('mongodb://localhost:27017/fakeLogIn',{
+mongoose.connect('mongodb+srv://RichardRios:Pepsicola1!@cluster0.qjqtw.mongodb.net/fakeLogIn?retryWrites=true&w=majority',{
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
